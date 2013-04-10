@@ -1,0 +1,262 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<title>噬魂</title>
+	</head>
+	<body>
+		<div>
+			hello 噬魂！
+		</div>
+	</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>噬魂</title>
+	<!-- CSS, including Blueprint, jQuery w/Smoothness, and AG CSS -->
+    <link rel="stylesheet" href="./css/blueprint/blueprint.min.css" media="screen, projection" />
+    <link rel="stylesheet" href="./css/blueprint/print.min.css" media="print" />
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="/css/blueprint/ie.min.css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="./css/ag.css" media="screen" />
+
+    <!-- Extra <head> Links -->
+    <link rel="alternate" type="application/atom+xml" title="Adequately Good Atom Feed" href="http://www.adequatelygood.com/feeds/atom.xml" />
+
+    <!-- TODO: favicon -->
+
+    <!-- IE HTML5 Compatibility -->
+    <!--[if IE]>
+      <script type="text/javascript">
+        (function () {
+          var tags = "header hgroup nav article time footer".split(" "),
+            i = 0,
+            l = tags.length;
+          for (; i < l; i += 1) {
+            document.createElement(tags[i]);
+          }
+        }());
+      </script>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <a name="top"></a>
+    <div id="container" class="container">
+
+      <!-- Header -->
+      <header class="span-24 last">
+        <!-- Title -->
+        <div id="title" class="span-24 last">
+          <div class="span-17 colborder prepend-top append-bottom">
+            <hgroup>
+              <h1>
+                <a href="/">噬魂</a>
+              </h1>
+              <h3 class="prepend-2 alt">无名程序猿的博物馆</h3>
+            </hgroup>
+          </div>
+          <div class="span-6 last prepend-top append-bottom">
+            <h2>
+              作者
+              <a href="http://twitter.com/bcherry">噬魂</a>
+            </h2>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Navigation Bar -->
+        <nav class="prepend-2 span-20 append-2 last append-bottom">
+          <div class="span-5">
+            <a href="/">传送石</a>
+          </div>
+          <div class="span-5">
+            <a href="#" id="archiveLink">陈列架</a>
+          </div>
+          <div class="span-5">
+            <a href="/about.html">猿史</a>
+          </div>
+          <div class="span-5 last">
+            <a href="/feeds/atom.xml">收藏屋</a>
+          </div>
+        </nav>
+
+        <!-- Archives Links -->
+        <div id="archives" class="span-24 last smallalts">
+          <hr />
+          <div class="archivelinks">
+            <span class="alt">年鉴</span>
+                <a class="tight" href="/2013">2013</a>
+                <a class="tight" href="/2012">2012</a>
+          </div>
+        </div>
+
+        <hr />
+      </header>
+
+	  <div id="colcontainer" class="span-24 last">
+		  <!-- Main content: Posts, etc. -->
+		  <div id="content" class="span-17 colborder">
+			  <a name="main"></a>
+
+			  <article class="span-17 last">
+			  <header class="span-17 last">
+
+			  <time class="alt" datetime="2013-04-08" pubdate>2011-04-08</time>
+
+			  <h1><a href="/Replacing-setTimeout-Globally.html">javascript的加号</a></h1>
+			  </header>
+			  <div class="span-17 last entry">
+				  <html><body><p><code>加号</code> . If you try, you might find that it’s much harder than you think to accomplish this in every browser, particularly if you ever want to find the originals again. After a lot of painful exp...</p></body></html>
+			  </div>
+			  </article>
+
+
+
+			  <div id="more_reading">
+				  <p class="smallalts pager">
+				  <span class="alt">go</span>
+
+
+
+				  <a class="tight" href="/page1">next</a>
+
+				  </p>
+			  </div>
+
+
+		  </div>
+
+		  <!-- Sidebar: Search, links, etc. -->
+		  <div id="sidebar" class="span-6 last">
+			  <hr class="space" />
+
+			  <div id="links">
+				  <h3>作者</h3>
+				  <p>
+				  	  无名程序猿一名，天津谋生，常出没于北京||天津||家。喜欢imba&&刀塔，自认为是不错的S，现实确是往往一天不赢几把。 
+				  </p>
+				  <ul>
+					  <li><a href="http://github.com/zjdesj">GitHub</a> - My Code</li>
+				  </ul>
+			  </div>
+
+			  <hr />
+
+			  <div id="tags">
+				  <h3>categories</h3>
+				  <ul>
+
+					  <li>
+					  <a href="/tag/javascript">javascript</a>
+					  (21)
+					  </li>
+
+					  <li>
+					  <a href="/tag/social%20gaming">social gaming</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/css">css</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/jquery">jquery</a>
+					  (2)
+					  </li>
+
+					  <li>
+					  <a href="/tag/performance">performance</a>
+					  (5)
+					  </li>
+
+					  <li>
+					  <a href="/tag/tools">tools</a>
+					  (2)
+					  </li>
+
+					  <li>
+					  <a href="/tag/html5">html5</a>
+					  (3)
+					  </li>
+
+					  <li>
+					  <a href="/tag/adequatelygood">adequatelygood</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/timers">timers</a>
+					  (2)
+					  </li>
+
+					  <li>
+					  <a href="/tag/module%20pattern">module pattern</a>
+					  (3)
+					  </li>
+
+					  <li>
+					  <a href="/tag/talks">talks</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/slide">slide</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/python">python</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/debugging">debugging</a>
+					  (1)
+					  </li>
+
+					  <li>
+					  <a href="/tag/testing">testing</a>
+					  (2)
+					  </li>
+
+					  <li>
+					  <a href="/tag/hashbang">hashbang</a>
+					  (1)
+					  </li>
+
+				  </ul>
+			  </div>
+
+			  <hr />
+
+
+		  </div>
+	  </div>
+  </div>
+
+  <script>
+	  (function() {
+		  var archiveLink = document.getElementById("archiveLink"),
+		  archives = document.getElementById("archives");
+
+		  archiveLink.onclick = function() {
+			  if (archives.className.match(/\bexpanded\b/)) {
+				  archives.className = archives.className.replace(/\bexpanded\b/g, '');
+				  } else {
+				  archives.className += ' expanded';
+			  }
+			  return false;
+		  };
+	  }());
+  </script>
+
+  </body>
+</html>
+
