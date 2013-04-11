@@ -43,7 +43,7 @@ nav.fixnav {
     display:block;
     width:80px;
     position:fixed;
-    left:70px;
+    left:60px;
 }
 nav.fixnav a:link,nav a:visited {
     display:block;
@@ -56,6 +56,9 @@ nav.nav {
     margin-bottom:17px;
     height:25px;
     padding:0 80px;
+}
+nav.nav a:hover {
+    font-weight:bold; 
 }
 nav.nav .navitem {
     float:left;
@@ -167,3 +170,4 @@ header h3{
 #showfix {
 	height:60px;
 } 
+
