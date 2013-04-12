@@ -1,5 +1,10 @@
 (function () {
     $('#check input').each(function(i,e){
+		if(i==0){
+			e.checked = false;
+		}else{
+			e.checked = true;
+		}
         $(e).bind('click',function(){
             if($(this).val() == 0){
                 $(this).attr('value',i+1);
@@ -8,6 +13,7 @@
             }
         });
     });
+	
     var blobSlice = File.prototype.slice || File.prototype.mozSlice || File.prototype.webkitSlice,
         tlog = document.getElementById("tlog"),
         slog = document.getElementById("slog"),
