@@ -1,0 +1,159 @@
+.md5 {
+    width:600px;
+    margin:0 auto;
+    padding: 5 30px;
+}
+.drop {
+    background-color: #3EDF94;
+    background-image: -moz-linear-gradient(center top , #2CEEC1, #3EDC94);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+    border: 3px solid;
+    text-align:center;
+    height:200px;
+}
+.drop h1{
+    margin-top:80px;
+}
+/*
+.result {
+    margin-top:20px;
+}
+.result em {
+    color:blue;
+    font-weight:blod;
+    font-size:18px;
+}
+*/
+.alert-message.error {
+    background-color: #C43C35;
+    background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.alert-message.success {
+    background-color: #57A957;
+    background-image: -moz-linear-gradient(center top , #62C462, #57A957);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.alert-message.info {
+    background-color: #339BB9;
+    background-image: -moz-linear-gradient(center top , #5BC0DE, #339BB9);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.alert-message {
+    background-color: #EEDC94;
+    background-image: -moz-linear-gradient(center top , #FCEEC1, #EEDC94);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+    color: #404040;
+    margin-bottom: 18px;
+    padding: 7px 15px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.alert-message .close {
+    margin-top: 1px;
+}
+.alert-message a {
+    color: #404040;
+    font-weight: bold;
+}
+.alert-message.danger p a, .alert-message.error p a, .alert-message.success p a, .alert-message.info p a {
+    color: #FFFFFF;
+}
+.alert-message h5 {
+    line-height: 18px;
+}
+.alert-message p {
+    margin-bottom: 0;
+    margin-top:0;
+}
+.alert-message div {
+    line-height: 28px;
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+.alert-message .btn {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.alert-message.block-message {
+    background-color: #FDF5D9;
+    background-image: none;
+    border-color: #FCEEC1;
+    box-shadow: none;
+    padding: 14px;
+}
+.alert-message.block-message ul, .alert-message.block-message p {
+    margin-right: 30px;
+}
+.alert-message.block-message ul {
+    margin-bottom: 0;
+}
+.alert-message.block-message li {
+    color: #404040;
+}
+.alert-message.block-message .alert-actions {
+    margin-top: 5px;
+}
+.alert-message.block-message.error, .alert-message.block-message.success, .alert-message.block-message.info {
+    color: #404040;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.alert-message.block-message.error {
+    background-color: #FDDFDE;
+    border-color: #FBC7C6;
+}
+.alert-message.block-message.success {
+    background-color: #D1EED1;
+    border-color: #BFE7BF;
+}
+.alert-message.block-message.info {
+    background-color: #DDF4FB;
+    border-color: #C6EDF9;
+}
+.alert-message.title {
+    text-align:center;
+}
+.alert-message.block-message.danger p a, .alert-message.block-message.error p a, .alert-message.block-message.success p a, .alert-message.block-message.info p a {
+    color: #404040;
+}
+.log {
+    margin-top:20px;
+}
+#check {
+    height:20px;
+    width:600px;
+    margin:0 auto;
+}
+#check span{
+    float:right
+}
+div.groupdiv {
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 3px;
+    padding:18px 12px 0;
+    margin-bottom:10px;
+}
+.half {
+    width:330px;
+    float:left;
+}
+article div.wrap {
+    height:600px;
+}

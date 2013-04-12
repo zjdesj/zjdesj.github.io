@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>噬魂</title>
     <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/md5.css"/>
   </head>
   <body>
       <!-- Header -->
@@ -13,7 +14,7 @@
 		  <div class="l titl">
 			<hgroup>
 			  <h1>
-				<a href="/">噬魂</a>
+				<a href="./index.html">噬魂</a>
 			  </h1>
 			  <h3>无名程序猿的私人博物馆</h3>
 			</hgroup>
@@ -82,11 +83,39 @@
 		  <div id="content">
 			  <article>
 				  <header>
-					  <time class="alt" datetime="2013-04-12" pubdate="">2011-04-12</time>
-					  <h1><a href="./md5.html">html5计算文件md5</a></h1>
+					  <time class="alt" datetime="2013-04-11" pubdate="">2013-04-11</time>
+					  <h1><a href="/add.html">html5计算md5</a></h1>
 				  </header>
-				  <div>
-					  html5计算文件md5。搭建了两种方式，全文件加载计算的和分块加载再计算。具体的<a href="./md5.html">点我</a>看吧。
+				  <div class="warp">
+					<div class="md5 drop" id="drop_zone">
+					  <h1>拖动文件到此区域或者点击选择文件</h1> 
+					</div>
+						<!--
+					<div class="md5 result">
+						<span id="result"> md5值：<em>M</em></span>
+					</div>
+						-->
+					<div id="check">
+						<span>
+							选择计算文件md5的方式：
+							<input type="checkbox" name="hash" value="0"> 整文件加载</input>
+							<input type="checkbox" name="hash" value="2" checked="checked"> 文件分块加载</input>
+						</span>
+					</div>
+					<div class="hide">
+						<input type="file" multiple="" name="files[]" id="files">
+					</div>
+					<div class="log" id="alog">
+					</div>
+					<div class="log" id="tlog">	
+						<!--
+						<div class="alert-message info"><p></p><strong>Starting incremental test (ffst333.wmv)</strong><br></div>
+						<div class="alert-message success"><strong>Finished loading!</strong><br></div>
+						<div class="alert-message error"><strong>Finished loading!</strong><br></div>
+						-->
+					</div>
+					<div class="log" id="slog">
+					</div>
 				  </div>
 			  </article>
 		  </div>
@@ -94,7 +123,7 @@
 		  <div id="more_reading">
 			  <p class="smallalts pager">
 			  <span class="alt">go</span>
-			  <a class="tight" href="./page1">next</a>
+			  <a class="tight" href="#">next</a>
 			  </p>
 		  </div>
 	  </section>
@@ -226,7 +255,10 @@
   </script>
   <script type="text/javascript" src="./js/j.js"></script>
   <script type="text/javascript" src="./js/g.js"></script>
-
+  <!--<script type="text/javascript" src="./js/md5-min.js"></script>-->
+  <script type="text/javascript" src="./js/spark-md5.js"></script>
+  <script type="text/javascript" src="./js/md5.js">
+  </script>
   </body>
 </html>
 

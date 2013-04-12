@@ -176,12 +176,11 @@ header h3{
     font-style: italic;
     font-weight: normal;
 }
-article .alt{
+article .alt {
     font-size:13px;
 }
 article header {
     width:690px;
-    float:left;
     position:relative;
     margin-right:0;
     padding-right:0;
