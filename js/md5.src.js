@@ -146,6 +146,7 @@
 
                 registerLog("<p></p><strong>分块读取</strong><br/>", "title","s",i);
                 registerLog("<p></p><strong>文件： (" + file.name + ")</strong><br/>", "info","s",i);
+                registerLog("<strong>文件大小：" +(parseInt(file.size)/1024/1024).toFixed(2) + "</strong>M<br/>", "info","s",i);
                 time = new Date().getTime();
                 loadNext();
             })(i);
@@ -180,6 +181,7 @@
 
                 registerLog("<strong>全文件读取</strong><br/>", "title","t",i);
                 registerLog("<strong>文件名：(" + file.name + ")</strong><br/>", "info","t",i);
+                registerLog("<strong>文件大小：" +(parseInt(file.size)/1024/1024).toFixed(2) + "</strong>M<br/>", "info","t",i);
                 time = new Date().getTime();
                 fileReader.readAsBinaryString(file);
             })(i)
