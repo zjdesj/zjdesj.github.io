@@ -175,7 +175,7 @@
                 };
 
                 fileReader.onerror = function(e) {
-                    registerLog("<strong>ERROR:</strong> FileReader出错了。理论上来说你的内存条太小了。<br/>", "error","t",i);
+                    registerLog("<strong>ERROR:</strong> FileReader出错了。<br/>", "error","t",i);
                 };
 
                 registerLog("<strong>全文件读取</strong><br/>", "title","t",i);
