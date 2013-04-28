@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>html5计算文件MD5</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/arr.css"/>
+  </head>
+  <body>
+      <!-- Header -->
+      <header class="">
+		<!-- Title -->
+		<div id="title">
+		  <div class="l titl">
+			<hgroup>
+			  <h1>
+				<a href="./index.html">噬魂</a>
+			  </h1>
+			  <h3>无名程序猿的私人博物馆</h3>
+			</hgroup>
+		  </div>
+		  <div class="l titr">
+			<h2>
+			  作者
+			  <a href="http://zjdesj.github.com">噬魂</a>
+			</h2>
+		  </div>
+		</div>
+
+        <hr />
+
+
+        <!-- Archives Links -->
+        <div id="archives" class="hide">
+          <hr />
+          <div class="archivelinks">
+            <span class="alt">年鉴</span>
+                <a class="tight" href="/2013">2013</a>
+                <a class="tight" href="/2012">2012</a>
+          </div>
+        </div>
+
+		<nav class="nav">
+		  <div class="navitem">
+			<a href="/">传送石</a>
+		  </div>
+		  <div class="navitem">
+			<a href="#" id="archiveLink">陈列架</a>
+		  </div>
+		  <div class="navitem">
+			<a href="/about.html">猿史</a>
+		  </div>
+		  <div class="navitem last">
+			<a href="/feeds/atom.xml">收藏屋</a>
+		  </div>
+		</nav>
+		<hr>
+    </header>
+
+
+	<!-- Navigation Bar -->
+	<nav class="fixnav">
+		<canvas id="showfix">
+		</canvas>
+	  <div class="navitem hide">
+		<a href="/">传送石</a>
+	  </div>
+	  <div class="navitem hide">
+		<a href="#" id="archiveLink">陈列架</a>
+	  </div>
+	  <div class="navitem hide">
+		<a href="/about.html">猿史</a>
+	  </div>
+	  <div class="navitem hide last">
+		<a href="/feeds/atom.xml">收藏屋</a>
+	  </div>
+	</nav>
+	<!--- Navigation Bar end-->
+
+    <div id="container" class="container">
+	  	<section>
+		  <!-- Main content: Posts, etc. -->
+		  <div id="content">
+			  <article>
+				  <header>
+					  <time class="alt" datetime="2013-04-28" pubdate="">2013-04-28</time>
+					  <h1><a href="/add.html">漫话javascript array[a]=b过程</a></h1>
+				  </header>
+				  <div class="warp">
+					  <p><span class="space"></span>今天一早来坐下就被人问了一个奇葩的问题。不容易描述就不先描述，直接代码先：</p>	
+					  <p class="jscode">
+						  <span class="codein">	>>> var xx = [];var oo={a:'asdas'};xx[oo]="qqq";</span>
+						  <span class="codeout">	"qqq"</span>
+						  <span class="codein">>>> console.log(xx[{ss:'234'}])</span>
+						  <span class="codeout">	qqq</span>
+						  <span class="codein">>>> xx[oo]</span>
+						  <span class="codeout">"qqq"</span>
+						  <span class="codein">>>> oo == {a:'asdas'}</span>
+						  <span class="codeout">false</span>
+					  </p>
+					  <p>
+					  	<span class="space"></span>	上边是js命令在firebug中执行的情况。问题来了，数组在使用引用类型实例作为存储的时候怎么会是这个样子：
+							对象oo明显不等于{a:'asdas'}；但是执行xx[oo]与执行xx[{ss:'234'}]结果相同。
+							对于这个问题，首先想到的是javascript中arr是线性存储，使用自然数作为索引。这样的话会不会是，先把对象
+							转换成数字。然后……  在命令行中验证之：
+					  </p>
+					  <p class="jscode">
+						  <span class="codein">>>> var b={}</span>
+						  <span class="codeout">undefined</span>
+						  <span class="codein">>>> b[{a:'fd'}] = "right?"</span>
+						  <span class="codeout">"right?"</span>
+						  <span class="codein">>>> +{a:'fd'}</span>
+						  <span class="codeout">NaN</span>
+						  <span class="codein">>>> b[NaN]</span>
+						  <span class="codeout">undefined</span>
+						  <span class="codein">>>> b["NaN"]</span>
+						  <span class="codeout">undefined</span>
+					  </p>
+					  <p>
+					  <span class="space"></span>	从上边的验证过程中可以得出结论，前边的假设是不成立的。
+						接着在某同学的启发中做了以下试验。
+					  </p>
+					  <p class="jscode">
+						  <span class="codein">>>> var arr = [];</span>
+						  <span class="codeout">undefined</span>
+						  <span class="codein">>>> arr.length</span>
+						  <span class="codeout">0</span>
+						  <span class="codein">>>> for(s in arr){console.log(s)}</span>
+						  <span class="codeout">undefined</span>
+						  <span class="codein">>>> arr[{a:123}] ="sadf";</span>
+						  <span class="codeout">"sadf"</span>
+						  <span class="codein">>>> arr</span>
+						  <span class="codeout">[]</span>
+						  <span class="codein">>>> arr.length</span>
+						  <span class="codeout">0</span>
+						  <span class="codein">>>> for(s in arr){console.log(s)}</span>
+						  <span class="codeout">[object Object]</span>
+						  <span class="codein">>>> arr[{b:234}] = "asf";</span>
+						  <span class="codeout">"asf"</span>
+						  <span class="codein">>>> arr</span>
+						  <span class="codeout">[]</span>
+						  <span class="codein">>>> arr.length</span>
+						  <span class="codeout">0</span>
+						  <span class="codein">>>> for(s in arr){console.log(s)}</span>
+						  <span class="codeout">[object Object]</span>
+					  </p>
+					  <p>
+					  <span class="space"></span>在上边两次添加元素到arr，结果却是arr本身作为数组并没有添加任何元素成功。但是从对象的角度去遍历arr发现，
+					  arr中出现了[object Object]这个东西。且两次添加最终都只出现了这一个属性。[object Object]这个东西眼熟，是
+					  最权威的toString。又有对象的属性不是变量就是函数，总之都是变量 = 值的形式。
+					  那是否可认定为arr[a]当a不是数字的时候，就要先强用最权威的toString()方法Object.prototype.toString.call(a)
+					  把a转换成能作为变量的字符串呢？开始验证：
+					  </p>
+					  <p class="jscode">
+						  <span class="codein">	>>> var b={};</span>
+						  <span class="codeout">	undefined</span>
+						  <span class="codein">	>>> b[{a:123}] ="good"</span>
+						  <span class="codeout">	"good"</span>
+						  <span class="codein">	>>> for(s in b)(console.log(s));</span>
+						  <span class="codeout">	[object Object]</span>
+						  <span class="codein">	>>> console.log(b)</span>
+						  <span class="codeout">	Object { [object Object]=</span>
+						  <span class="codeout">	"good"</span>
+						  <span class="codeout">	}</span>
+						  <span class="codein">	>>> b["[object Object]"]</span>
+						  <span class="codeout">	"good"</span>
+						  <span class="codein">	>>> Object.prototype.toString.call({a:123})</span>
+						  <span class="codeout">	"[object Object]"</span>
+					  </p>	
+					  <p>
+						  <span class="space"></span>初步验证成立，进行一个整体验证。
+					  </p>	
+					  <p class="jscode">
+					    <span class="codein">>>> var aa =[];</span>
+					    <span class="codeout">undefined</span>
+					    <span class="codein">>>> aa.length</span>
+					    <span class="codeout">0</span>
+
+					    <span class="codein">>>> aa['5']='qq';</span>
+					    <span class="codeout">"qq"</span>
+					    <span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> aa</span>
+						<span class="codeout">[</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"qq"</span>
+						<span class="codeout">]</span>
+						<span class="codein">>>> Object.prototype.toString.call('5')</span>
+						<span class="codeout">"[object String]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codein">>>> aa[5]</span>
+						<span class="codeout">"qq"</span>
+
+						<span class="codein">>>> aa['b'] = 'bb';</span>
+						<span class="codeout">"bb"</span>
+						<span class="codein">>>> aa</span>
+						<span class="codeout">[</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"qq"</span>
+						<span class="codeout">]</span>
+						<span class="codein">>>> Object.prototype.toString.call('b')</span>
+						<span class="codeout">"[object String]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+
+						<span class="codein">>>> aa[true] ='true';</span>
+						<span class="codeout">"true"</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> Object.prototype.toString.call(true)</span>
+						<span class="codeout">"[object Boolean]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+
+						<span class="codein">>>> aa[{d:123}] ="jk"</span>
+						<span class="codeout">"jk"</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> Object.prototype.toString.call({d:123})</span>
+						<span class="codeout">"[object Object]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+						<span class="codeout">[object Object]</span>
+
+						<span class="codein">>>> aa[undefined]="sdf"</span>
+						<span class="codeout">"sdf"</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> Object.prototype.toString.call(undefined)</span>
+						<span class="codeout">"[object Undefined]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+						<span class="codeout">[object Object]</span>
+						<span class="codeout">undefined</span>
+
+						<span class="codein">>>> aa[1] ="111"</span>
+						<span class="codeout">"111"</span>
+						<span class="codein">>>> aa</span>
+						<span class="codeout">[</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"111"</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"qq"</span>
+						<span class="codeout">]</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> Object.prototype.toString.call(1)</span>
+						<span class="codeout">"[object Number]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+						<span class="codeout">[object Object]</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">1</span>
+
+						<span class="codein">>>> aa[null]='null'</span>
+						<span class="codeout">"null"</span>
+						<span class="codein">>>> aa</span>
+						<span class="codeout">[</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"111"</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"qq"</span>
+						<span class="codeout">]</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> Object.prototype.toString.call(null)</span>
+						<span class="codeout">"[object Null]"</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+						<span class="codeout">[object Object]</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">1</span>
+						<span class="codeout">null</span>
+
+						<span class="codein">>>> aa[1.23]='123'</span>
+						<span class="codeout">"123"</span>
+						<span class="codein">>>> aa.length</span>
+						<span class="codeout">6</span>
+						<span class="codein">>>> aa</span>
+						<span class="codeout">[</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"111"</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">, </span>
+						<span class="codeout">"qq"</span>
+						<span class="codeout">]</span>
+						<span class="codein">>>> for(s in aa){console.log(s)}</span>
+						<span class="codeout">5</span>
+						<span class="codeout">b</span>
+						<span class="codeout">true</span>
+						<span class="codeout">[object Object]</span>
+						<span class="codeout">undefined</span>
+						<span class="codeout">1</span>
+						<span class="codeout">null</span>
+						<span class="codeout">1.23</span>
+						<span class="codein">>>> Object.prototype.toString.call(1.23)</span>
+						<span class="codeout">"[object Number]"</span>
+					  </p>	
+					  <p>
+					  从以上的种种可以看出：
+					  </br>
+					  <span class="space"></span>在数组初始化完成后array[a] = b中，首先会使用Object.prototype.toString.call(a)对a
+					  进行整理。在数组对象中添加属性a，其值是b；但是如果Object.prototype.toString.call(a)是[object Object]则在
+					  数组对象中添加[object Object]属性其值等于b。完成这一步之后，就是对数组进行初始化，就是从数组对象中遍历添加的
+					  属性中是否有自然数，如果有的话取最大的一个值+1作为数组的length值，并使array[max最大] = max最大的值，其他自然数
+					  同理组成数组值，不存在的值用undefined占位，最终得到线性数组。
+					  </p>	
+				  </div>
+			  </article>
+		  </div> 
+		  <div id="more_reading">
+			  <p class="smallalts pager">
+			  <span class="alt">go</span>
+			  <a class="tight" href="#">next</a>
+			  </p>
+		  </div>
+	  </section>
+
+	  
+	 <!-- Sidebar: Search, links, etc. -->
+	  <aside>
+		  <hr class="space" />
+
+		  <div id="links">
+			  <h3>Author</h3>
+			  <p>
+				  无名程序猿一名，天津谋生，常出没于北京||天津||家。喜欢imba&&刀塔，自认为是不错的S，现实确是往往一天不赢几把。 
+			  </p>
+			  <ul>
+				  <li><a href="http://github.com/zjdesj">GitHub</a> - My Code</li>
+			  </ul>
+		  </div>
+
+		  <hr />
+
+		  <div id="tags">
+			  <h3>categories</h3>
+			  <ul>
+
+				  <li>
+				  <a href="/tag/javascript">javascript</a>
+				  (21)
+				  </li>
+
+				  <li>
+				  <a href="/tag/social%20gaming">social gaming</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/css">css</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/jquery">jquery</a>
+				  (2)
+				  </li>
+
+				  <li>
+				  <a href="/tag/performance">performance</a>
+				  (5)
+				  </li>
+
+				  <li>
+				  <a href="/tag/tools">tools</a>
+				  (2)
+				  </li>
+
+				  <li>
+				  <a href="/tag/html5">html5</a>
+				  (3)
+				  </li>
+
+				  <li>
+				  <a href="/tag/adequatelygood">adequatelygood</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/timers">timers</a>
+				  (2)
+				  </li>
+
+				  <li>
+				  <a href="/tag/module%20pattern">module pattern</a>
+				  (3)
+				  </li>
+
+				  <li>
+				  <a href="/tag/talks">talks</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/slide">slide</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/python">python</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/debugging">debugging</a>
+				  (1)
+				  </li>
+
+				  <li>
+				  <a href="/tag/testing">testing</a>
+				  (2)
+				  </li>
+
+				  <li>
+				  <a href="/tag/hashbang">hashbang</a>
+				  (1)
+				  </li>
+
+			  </ul>
+		  </div>
+		  <hr />
+	  </aside>
+  </div>
+  <footer class='hide'>
+	  <h2>footer</h2>
+  </footer>
+
+  <script>
+//	  (function() {
+//		  var archiveLink = document.getElementById("archiveLink"),
+//		  archives = document.getElementById("archives");
+//
+//		  archiveLink.onclick = function() {
+//			  if (archives.className.match(/\bexpanded\b/)) {
+//				  archives.className = archives.className.replace(/\bexpanded\b/g, '');
+//				  } else {
+//				  archives.className += ' expanded';
+//			  }
+//			  return false;
+//		  };
+//	  }());
+  </script>
+  <script type="text/javascript" src="./js/j.js"></script>
+  <script type="text/javascript" src="./js/g.js"></script>
+  <!--<script type="text/javascript" src="./js/md5-min.js"></script>-->
+  <script type="text/javascript" src="./js/arr.js">
+  </script>
+  </body>
+</html>
+
