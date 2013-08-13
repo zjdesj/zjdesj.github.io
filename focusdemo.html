@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>噬魂</title>
+    <title>html5计算文件MD5</title>
     <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/md5.css"/>
   </head>
   <body>
       <!-- Header -->
@@ -13,7 +14,7 @@
 		  <div class="l titl">
 			<hgroup>
 			  <h1>
-				<a href="/">噬魂</a>
+				<a href="./index.html">噬魂</a>
 			  </h1>
 			  <h3>无名程序猿的私人博物馆</h3>
 			</hgroup>
@@ -81,39 +82,15 @@
 		  <!-- Main content: Posts, etc. -->
 		  <div id="content">
 			  <article>
-				  <header>
-					  <time class="alt" datetime="2013-08-13" pubdate="">2013-08-13</time>
-					  <h1><a href="./focus/focus.html" target='_blank'>左右按钮切换的焦点图</a></h1>
+				  <header class="span-17 last">
+					  <time class="alt" datetime="2013-08-13" pubdate>2013-08-13</time>
+					  <h1><a href="#">焦点图（1）-- 左右切换按钮焦点图</a></h1>
 				  </header>
-				  <div>
-					  <a href="./focus/focus.html" target='_blank'>点我</a>看吧。
-				  </div>
-			  </article>
-			  <article>
-				  <header>
-					  <time class="alt" datetime="2013-04-28" pubdate="">2013-04-28</time>
-					  <h1><a href="./array.html" target='_blank'>漫话javascrip array[a]=b过程</a></h1>
-				  </header>
-				  <div>
-					  本文详细的列出了自己对array[a] = b，这一过程执行的猜测。<a href="./array.html" target='_blank'>点我</a>看吧。
-				  </div>
-			  </article>
-			  <article>
-				  <header>
-					  <time class="alt" datetime="2013-04-25" pubdate="">2013-04-25</time>
-					  <h1><a href="./geolocation.html" target='_blank'>html5定位</a></h1>
-				  </header>
-				  <div>
-					  html5定位<a href="./geolocation.html" target='_blank'>点我</a>看吧。
-				  </div>
-			  </article>
-			  <article>
-				  <header>
-					  <time class="alt" datetime="2013-04-12" pubdate="">2013-04-12</time>
-					  <h1><a href="./md5.html" target='_blank'>html5计算文件md5</a></h1>
-				  </header>
-				  <div>
-					  html5计算文件md5。搭建了两种方式，全文件加载计算的和分块加载再计算。具体的<a href="./md5.html" target='_blank'>点我</a>看吧。
+				  <div class="span-17 last entry" id="blogbody">
+						<div id="container">
+						</div>
+						<div id="container1">
+						</div>
 				  </div>
 			  </article>
 		  </div>
@@ -126,6 +103,7 @@
 		  </div>
 	  </section>
 
+	  
 	 <!-- Sidebar: Search, links, etc. -->
 	  <aside>
 		  <hr class="space" />
@@ -252,7 +230,11 @@
   </script>
   <script type="text/javascript" src="./js/j.js"></script>
   <script type="text/javascript" src="./js/g.js"></script>
-
+  <script type="text/javascript" src="./focus/focusImage.js"></script>
+	<script type="text/javascript">
+		$('#container').focusImage();
+		$('#container1').focusImage({images:['./focus/images/8.jpg','./focus/images/9.jpg','./focus/images/10.jpg','./focus/images/11.jpg','./focus/images/12.jpg','./focus/images/13.jpg','./focus/images/14.jpg']});
+	</script>
   </body>
 </html>
 

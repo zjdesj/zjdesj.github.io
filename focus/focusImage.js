@@ -10,7 +10,7 @@
 			return;
 		}
 		var Default = {
-			images:['./images/1.jpg','./images/2.jpg','./images/3.jpg','./images/4.jpg','./images/5.jpg','./images/6.jpg','./images/7.jpg']
+			images:['http://zjdesj.github.io/focus/images/1.jpg','http://zjdesj.github.io/focus/images/2.jpg','http://zjdesj.github.io/focus/images/3.jpg','http://zjdesj.github.io/focus/images/4.jpg','http://zjdesj.github.io/focus/images/5.jpg','http://zjdesj.github.io/focus/images/6.jpg','http://zjdesj.github.io/focus/images/7.jpg']
 			,type: 1
 			,method: 1
 			,n: 0
