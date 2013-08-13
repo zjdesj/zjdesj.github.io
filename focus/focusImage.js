@@ -29,7 +29,7 @@
 			,'	.fiUl li{list-style:none;}'
 			//,'	.fiArrrowBtn{background: url("images/ico_1.png") no-repeat scroll 0 0 transparent;cursor: pointer;display: inline-block;height: 20px;overflow: hidden;vertical-align: middle;width: 20px;}'
 			,'	.ficontainer{width:',wid,'px;height:',hei,'px;}'
-			,'	.fiArrowBtn{background:url(images/ico.png) no-repeat;display:inline-block;width:21px;height:110px;position:relative;}'
+			,'	.fiArrowBtn{background:url(http://zjdesj.github.io/focus/images/ico.png) no-repeat;display:inline-block;width:21px;height:110px;position:relative;}'
 			,'	.fiArrowL{background-position:-190px -10px;bottom:',hei/2 + 55,'px;left:0;}'
 			,'	.fiArrowR{background-position:-230px -10px;bottom:',hei/2 + 55,'px;left:',wid-40,'px;}'
 			,'	.fiArrowL:hover{background-position:-110px -10px;}'
